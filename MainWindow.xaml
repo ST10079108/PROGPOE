@@ -1,0 +1,89 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="467" 
+        Width="800"
+        Background="#FF1A374A"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="59"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="157"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.RowSpan="2" Background="#FF172935">
+            <Label Content="Recipe App" Width="131" FontFamily="Roboto" FontSize="16" Grid.Row="1" Foreground="White" Margin="0,13,0,0"/>
+            <Button x:Name="btnAddRecipes" Content="Add Recipe" Height="40" Background="#FF172935" BorderBrush="#00707070" Foreground="White" HorizontalContentAlignment="Left" Padding="35,1,1,1" FontFamily="Roboto" FontSize="14" Margin="0,35,0,0" Click="btnAddRecipes_Click" />
+            <Button x:Name="btnDisplayAllRecipes" Content="Display All Recipes" Height="40" Background="#FF172935" BorderBrush="#00707070" HorizontalContentAlignment="Left" Padding="35,1,1,1" FontFamily="Roboto" FontSize="14" Foreground="White" Click="btnDisplayAllRecipes_Click" />
+            <Button x:Name="btnDisplayARecipe" Content="Display a Recipe" Height="40" Background="#FF172935" BorderBrush="#00707070" HorizontalContentAlignment="Left" Padding="35,1,1,1" FontFamily="Roboto" FontSize="14" Foreground="White" Click="btnDisplayARecipe_Click" />
+            <Button x:Name="btnExit" Content="Exit" Height="40" Background="#FF172935" BorderBrush="#00707070" Foreground="White" HorizontalContentAlignment="Left" Padding="35,1,1,1" FontFamily="Roboto" FontSize="14" Click="btnExit_Click" />
+        </StackPanel>
+
+        <Label Content="Add Recipe" Padding="0,0,0,0" Margin="59,13,0,360" Width="106" HorizontalAlignment="Left" FontFamily="Roboto" FontSize="18" Foreground="White" Grid.Column="1" Grid.Row="1"/>
+
+
+        <TextBox x:Name="txtRName" TextWrapping="Wrap" Grid.Column="1" Margin="59,70,446,312" Grid.Row="1" Background="White" BorderBrush="#00ABADB3" FontFamily="Roboto" VerticalContentAlignment="Center" Foreground="Black" Height="26" TextChanged="txtRName_TextChanged" />
+        <Label Content="Recipe Name" Margin="59,53,0,338" Width="118" HorizontalAlignment="Left" FontFamily="Roboto" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Foreground="White" FontSize="14"/>
+        <Label Content="Number of Ingredients" Width="145" HorizontalAlignment="Left" Margin="243,53,0,339" FontFamily="Roboto" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Foreground="White" FontSize="14"/>
+        <TextBox x:Name="txtNumIngredients" TextWrapping="Wrap" Grid.Column="1" Margin="243,70,304,312" Grid.Row="1" Background="White" BorderBrush="#00ABADB3" FontFamily="Roboto" VerticalContentAlignment="Center" Foreground="Black" Height="26" TextChanged="txtNumIngredients_TextChanged" />
+        <Label Content="Number of steps" Width="118" HorizontalAlignment="Left" Margin="439,53,0,339" FontFamily="Roboto" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Foreground="White" FontSize="14"/>
+        <TextBox x:Name="txtNumSteps" TextWrapping="Wrap" Grid.Column="1" Margin="439,70,110,312" Grid.Row="1" Background="White" BorderBrush="#00ABADB3" FontFamily="Roboto" VerticalContentAlignment="Center" Foreground="Black" Height="26" TextChanged="txtSteps_TextChanged"/>
+
+        <Label Content="Add Ingredient" Padding="0,0,0,0" Margin="59,126,0,256" Width="126" HorizontalAlignment="Left" FontFamily="Roboto" FontSize="18" Foreground="White" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="btnNewIngredient" Grid.Column="1" Content="Add Ingredient" HorizontalAlignment="Left" Margin="351,247,0,0" Grid.Row="1" VerticalAlignment="Top" Width="126" Height="42" Background="#FF196288" BorderBrush="#00707070" Foreground="White" FontSize="14" Click="btnNewIngredient_Click"   />
+
+        <TextBox x:Name="txtIName" TextWrapping="Wrap" Grid.Column="1" Margin="190,196,293,186" Grid.Row="1" Background="White" BorderBrush="#00ABADB3" FontFamily="Roboto" VerticalContentAlignment="Center" Foreground="Black" Height="26" TextChanged="txtIName_TextChanged"  />
+        <Label Content="Ingredient Name" Margin="197,178,0,214" Width="118" HorizontalAlignment="Left" FontFamily="Roboto" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Foreground="White" FontSize="14"/>
+        <Label Content="Ingredient Number" Margin="38,174,0,217" Width="160" HorizontalAlignment="Left" FontFamily="Roboto" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Foreground="White" FontSize="14"/>
+        <TextBox x:Name="txtINumber" TextWrapping="Wrap" Grid.Column="1" Margin="384,196,199,186" Grid.Row="1" Background="White" BorderBrush="#00ABADB3" FontFamily="Roboto" VerticalContentAlignment="Center" Foreground="Black" Height="26" TextChanged="txtINumber_TextChanged"  />
+        <Label Content="Quantity" Margin="385,174,0,217" Width="59" HorizontalAlignment="Left" FontFamily="Roboto" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Foreground="White" FontSize="14"/>
+        <TextBox x:Name="txtIQuantity" TextWrapping="Wrap" Grid.Column="1" Margin="40,191,545,191" Grid.Row="1" Background="White" BorderBrush="#00ABADB3" FontFamily="Roboto" VerticalContentAlignment="Center" Foreground="Black" Height="26" TextChanged="txtIQuantity_TextChanged" RenderTransformOrigin="-0.475,-1.962"  />
+        <Label Content="Unit of Measurement" Margin="506,175,0,216" Width="118" HorizontalAlignment="Left" FontFamily="Roboto" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Foreground="White" FontSize="14"/>
+        <TextBox x:Name="txtIUOM" TextWrapping="Wrap" Grid.Column="1" Margin="506,196,31,186" Grid.Row="1" Background="White" BorderBrush="#00ABADB3" FontFamily="Roboto" VerticalContentAlignment="Center" Foreground="Black" Height="26" TextChanged="txtIUOM_TextChanged"  />
+        <Label Content="Calories" Margin="62,233,0,158" Width="50" HorizontalAlignment="Left" FontFamily="Roboto" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Foreground="White" FontSize="14"/>
+        <TextBox x:Name="txtICalories" TextWrapping="Wrap" Grid.Column="1" Margin="60,255,507,127" Grid.Row="1" Background="White" BorderBrush="#00ABADB3" FontFamily="Roboto" VerticalContentAlignment="Center" Foreground="Black" Height="26" TextChanged="txtICalories_TextChanged"  />
+        <Label Content="Food Group" Margin="184,233,0,158" Width="118" HorizontalAlignment="Left" FontFamily="Roboto" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Foreground="White" FontSize="14"/>
+
+        <ComboBox x:Name="cmbFoodGroup" Grid.Column="1" HorizontalAlignment="Left" Margin="184,255,0,0" Grid.Row="1" VerticalAlignment="Top" Width="112" Height="26" BorderBrush="#00ACACAC" SelectedIndex="0" SelectionChanged="cmbFoodGroup_SelectionChanged" >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FF312F46" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content=""/>
+            <ComboBoxItem Content="Fruit and Veg"/>
+            <ComboBoxItem Content="Starchy Food"/>
+            <ComboBoxItem Content="Dairy"/>
+            <ComboBoxItem Content="Protein"/>
+            <ComboBoxItem Content="Fat"/>
+        </ComboBox>
+
+        <Label Content="Add Step" Padding="0,0,0,0" Margin="59,286,0,95" Width="100" HorizontalAlignment="Left" FontFamily="Roboto" FontSize="18" Foreground="White" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="btnNewStep" Grid.Column="1" Content="Add Step" HorizontalAlignment="Left" Margin="502,329,0,0" Grid.Row="1" VerticalAlignment="Top" Width="126" Height="40" Background="#FF196288" BorderBrush="#00707070" Foreground="White" FontSize="14" Click="btnNewStep_Click"  />
+
+        <TextBox x:Name="txtSNumber" TextWrapping="Wrap" Grid.Column="1" Margin="59,336,531,46" Grid.Row="1" Background="White" BorderBrush="#00ABADB3" FontFamily="Roboto" VerticalContentAlignment="Center" Foreground="Black" Height="26" TextChanged="txtSNumber_TextChanged"   />
+        <Label Content="Step Number" Margin="59,315,0,77" Width="118" HorizontalAlignment="Left" FontFamily="Roboto" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Foreground="White" FontSize="14"/>
+
+        <TextBox x:Name="txtSDescription" TextWrapping="Wrap" Grid.Column="1" Margin="190,336,181,46" Grid.Row="1" Background="White" BorderBrush="#00ABADB3" FontFamily="Roboto" VerticalContentAlignment="Center" Foreground="Black" Height="26" TextChanged="txtSDescription_TextChanged"    />
+        <Label Content="Step Description" Margin="190,318,0,74" Width="118" HorizontalAlignment="Left" FontFamily="Roboto" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Foreground="White" FontSize="14"/>
+       
+        <Button x:Name="btnAddRecipe" Grid.Column="1" Content="Add Recipe" HorizontalAlignment="Left" Margin="330,0,0,0" VerticalAlignment="Center" Width="114" Height="36" Background="#FF196288" BorderBrush="#00707070" Foreground="White" FontSize="14" Click="AddRecipe_Click" />
+        <Button x:Name="btnCancel" Grid.Column="1" Content="Cancel" HorizontalAlignment="Left" Margin="473,10,0,0" VerticalAlignment="Top" Width="114" Height="36" Background="#FF196288" BorderBrush="#00707070" Foreground="White" FontSize="14" Click="btnCancel_Click"/>
+
+
+    </Grid>
+</Window>
